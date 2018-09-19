@@ -1,0 +1,16 @@
+name: color_picker_palette
+description: A color picker which you are looking for.
+version: 0.0.1
+author: vemarav
+homepage: https://github.com/vemarav
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
