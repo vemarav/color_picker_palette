@@ -1,7 +1,7 @@
 name: color_picker_palette
 description: A color picker which you are looking for.
 version: 0.0.1
-author: vemarav
+author: vemarav <vemaravv@gmail.com>
 homepage: https://github.com/vemarav
 
 environment:
