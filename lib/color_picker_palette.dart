@@ -39,7 +39,7 @@ class ColorPickerPalette extends StatelessWidget {
   }
 
   Color color() {
-    return _widgetKey.currentState?.color ?? Colors.primaries[0];
+    return _widgetKey.currentState?.color ?? colors[0];
   }
 }
 
@@ -66,15 +66,16 @@ class _ColorPickerPaletteWidgetState extends State<_ColorPickerPaletteWidget> {
   final double size;
   static const double DEFAULT_SIZE = 50.0;
   Color color;
+  TextEditingController _textController;
 
   @override
   Widget build(BuildContext context) {
     var containerSize = (size ?? DEFAULT_SIZE) + 16.0;
+    _textController = TextEditingController(text: '');
     return Container(
       height: containerSize,
       child: ListView(
         padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
-        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         children: circleButtons(),
       ),
@@ -100,6 +101,107 @@ class _ColorPickerPaletteWidgetState extends State<_ColorPickerPaletteWidget> {
         size: size,
       ));
     });
+    circleButtonWidgets.add(
+      new CircleButton(
+        size: size,
+        child: Icon(
+          Icons.add,
+          color: Colors.grey.shade700,
+        ),
+        color: Colors.white,
+        onTap: () {
+          showColorDialog(context);
+        },
+      ),
+    );
     return circleButtonWidgets;
+  }
+
+  Future<String> showColorDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Enter HEX color code'),
+            content: Container(
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                      border: Border.all(
+                        color: Colors.grey.shade200,
+                        width: 2.0,
+                      ),
+                    ),
+                    child: Text(
+                      '#',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade100,
+                        border: Border.all(
+                          color: Colors.grey.shade200,
+                          width: 2.0,
+                        ),
+                      ),
+                      child: EditableText(
+                        controller: _textController,
+                        cursorColor: Colors.black,
+                        cursorWidth: 2.0,
+                        focusNode: FocusNode(),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+                onPressed: () {
+                  Color _color =
+                      new Color(int.parse("0xFF${_textController.text}"));
+                  setState(() {
+                    color = _color;
+                    colors.add(_color);
+                  });
+                  callback();
+                  Navigator.pop(context);
+                },
+              ),
+              FlatButton(
+                child: Text(
+                  'CANCEL',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CircleButton extends StatelessWidget {
-  CircleButton({this.color, this.onTap, this.size})
+  CircleButton({this.color, this.onTap, this.size, this.child})
       : assert(
   color != null,
   "Provide Color for CircleButton \n Example: " +
@@ -9,6 +9,7 @@ class CircleButton extends StatelessWidget {
 
   final Function onTap;
   final double size;
+  final Widget child;
   final Color color;
   static const double DEFAULT_SIZE = 50.0;
 
@@ -17,6 +18,7 @@ class CircleButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        child: child,
         margin: EdgeInsets.all(4.0),
         width: size ?? DEFAULT_SIZE,
         height: size ?? DEFAULT_SIZE,
@@ -25,7 +27,7 @@ class CircleButton extends StatelessWidget {
           color: color,
           border: Border.all(
             color: Colors.grey,
-            width: 1.0,
+            width: 1.5,
           ),
         ),
       ),
