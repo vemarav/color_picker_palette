@@ -1,8 +1,8 @@
-# color_picker_palette
+# color_picker_palette 0.1.0
 
 A color picker palette with custom colors.
 
-# Usage
+## Usage
 
 > You can refer `color_picker_palette/example`.
 ```dart
@@ -20,4 +20,10 @@ setColorState() {
 }
 ```
 
-> Feel free contribute or raise issues.
+## Contributing
+
+We encourage you contribute to color_picker_palette flutter package.
+
+## License
+
+color_picker_palette is released under [MIT License](https://opensource.org/licenses/MIT)
