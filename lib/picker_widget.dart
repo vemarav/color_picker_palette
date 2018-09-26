@@ -70,6 +70,19 @@ class ColorPickerPaletteWidgetState extends State<ColorPickerPaletteWidget> {
             invokeCallback();
           },
           size: size,
+          onLongPress: () {
+            if(this.color == color) {
+              setState(() {
+                this.color = colors[0];
+                colors.remove(color);
+              });
+            } else {
+              setState(() {
+                colors.remove(color);
+              });
+            }
+            invokeCallback();
+          },
         ),
       );
     });

@@ -2,13 +2,20 @@ import 'color_picker_palette.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({this.color, this.onTap, this.size, this.child, this.buttonType})
+  CustomButton(
+      {this.color,
+      this.onTap,
+      this.onLongPress,
+      this.size,
+      this.child,
+      this.buttonType})
       : assert(
             color != null,
             "Provide Color for CircleButton \n Example: " +
                 "\n\n CircleButton(color: Colors.blue)");
 
-  final Function onTap;
+  final VoidCallback onTap;
+  final VoidCallback onLongPress;
   final ButtonType buttonType;
   final double size;
   final Widget child;
@@ -18,7 +25,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Container(
         child: child,
@@ -27,16 +34,17 @@ class CustomButton extends StatelessWidget {
         height: (size ?? DEFAULT_SIZE),
         decoration: selected(),
       ),
+      onLongPress: onLongPress,
     );
   }
 
   Decoration selected() {
     switch (buttonType) {
-      case ButtonType.circular :
+      case ButtonType.circular:
         return circular();
-      case ButtonType.rounded :
+      case ButtonType.rounded:
         return rounded();
-      case ButtonType.rectangle :
+      case ButtonType.rectangle:
         return rectangular();
       default:
         return circular();
