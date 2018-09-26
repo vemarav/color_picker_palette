@@ -3,8 +3,16 @@
 A color picker palette with custom colors.
 
 ## Usage
+Using `color_picker_palette` you can provide
+user with list of custom colors to choose.
 
-> You can refer `color_picker_palette/example`.
+It will show a horizontal list of colors including
+a button to add custom colors for user.
+
+Long press will remove color from the list.
+
+You can refer `color_picker_palette/example`.
+
 ```dart
 colorPickerPalette = new ColorPickerPalette(
   size: 30.0,

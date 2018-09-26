@@ -2,7 +2,6 @@ import 'custom_button.dart';
 import 'color_picker_palette.dart';
 import 'package:flutter/material.dart';
 
-
 class ColorPickerPaletteWidget extends StatefulWidget {
   ColorPickerPaletteWidget(
       {Key key, this.size, this.callback, this.colors, this.buttonType})
@@ -14,11 +13,11 @@ class ColorPickerPaletteWidget extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => ColorPickerPaletteWidgetState(
-    size: size,
-    callback: callback,
-    colors: colors,
-    buttonType: buttonType,
-  );
+        size: size,
+        callback: callback,
+        colors: colors,
+        buttonType: buttonType,
+      );
 }
 
 class ColorPickerPaletteWidgetState extends State<ColorPickerPaletteWidget> {
@@ -71,7 +70,7 @@ class ColorPickerPaletteWidgetState extends State<ColorPickerPaletteWidget> {
           },
           size: size,
           onLongPress: () {
-            if(this.color == color) {
+            if (this.color == color) {
               setState(() {
                 this.color = colors[0];
                 colors.remove(color);

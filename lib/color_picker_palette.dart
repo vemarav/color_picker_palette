@@ -3,11 +3,7 @@ library color_picker_palette;
 import 'package:flutter/material.dart';
 import 'package:color_picker_palette/picker_widget.dart';
 
-enum ButtonType {
-  circular,
-  rounded,
-  rectangle
-}
+enum ButtonType { circular, rounded, rectangle }
 
 class ColorPickerPalette extends StatelessWidget {
   ColorPickerPalette({this.size, this.onChange, this.colors, this.buttonType})
@@ -50,4 +46,3 @@ class ColorPickerPalette extends StatelessWidget {
     return _widgetKey.currentState?.color ?? colors[0];
   }
 }
-
