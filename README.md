@@ -1,9 +1,5 @@
 # color_picker_palette
 
-A new flutter package project.
+A color picker palette with custom colors.
 
-## Getting Started
-
-For help getting started with Flutter, view our online [documentation](https://flutter.io/).
-
-For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).
+# Refer `color_picker_palette/example` for usage.

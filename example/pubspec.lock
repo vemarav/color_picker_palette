@@ -46,10 +46,10 @@ packages:
   color_picker_palette:
     dependency: "direct main"
     description:
-      path: "../color_picker_palette"
-      relative: true
-    source: path
-    version: "0.0.2"
+      name: color_picker_palette
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   convert:
     dependency: transitive
     description:
