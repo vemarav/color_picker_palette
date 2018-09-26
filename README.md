@@ -1,4 +1,4 @@
-# color_picker_palette 0.1.0
+# color_picker_palette 0.1.3
 
 A color picker palette with custom colors.
 
@@ -11,21 +11,21 @@ a button to add custom colors for user.
 
 Long press will remove color from the list.
 
-You can refer `color_picker_palette/example`.
+You can refer [color_picker_palette/example](https://github.com/vemarav/color_picker_palette/tree/master/example)
 
 ```dart
-colorPickerPalette = new ColorPickerPalette(
-  size: 30.0,
-  onChange: setColorState,
-  colors: colors,
-  buttonType: ButtonType.circular,
-);
+  colorPickerPalette = new ColorPickerPalette(
+    size: 30.0,
+    onChange: setColorState,
+    colors: colors,
+    buttonType: ButtonType.circular,
+  );
   
-setColorState() {
-  setState(() {
-    color = colorPickerPalette.color();
-  });
-}
+  setColorState() {
+    setState(() {
+      color = colorPickerPalette.color();
+    });
+  }
 ```
 
 ## Contributing
