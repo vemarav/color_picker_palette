@@ -37,5 +37,5 @@ We encourage you contribute to color_picker_palette flutter package.
 color_picker_palette is released under [MIT License](https://opensource.org/licenses/MIT)
 
 ## Social
-[![Twitter Follow](https://img.shields.io/twitter/follow/vemarav.svg?style=social&label=Follow)](https://twitter.com/vemarav/follow)
+[![Twitter Follow](https://img.shields.io/twitter/follow/vemarav.svg?style=social&label=Follow)](https://twitter.com/vemarav)
 
